@@ -1,0 +1,81 @@
+.Allcars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 30px;
+  width: 100vw;
+}
+
+.principale {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: start;
+  padding-top: 2px;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  box-shadow: -7px 5px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 34px;
+}
+
+.modele {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  box-shadow: -7px 5px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 34px;
+  border: 1px solid black;
+}
+
+.gestion {
+  width: 10%;
+  display: flex;
+  justify-content: space-around;
+  gap: 30%;
+}
+
+.gestion img {
+  width: 45%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  box-shadow: -7px 5px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 34px;
+  border: 1px solid black;
+}
+
+.info h2 {
+  font-size: small;
+}
+
+.status {
+  border-radius: 34px;
+  border: solid 0.2vw RGB(248, 153, 28);
+  background-color: RGB(248, 153, 28);
+}
+
+.CardItem {
+  margin-top: 4vh;
+  padding-top: 2vh;
+  margin-left: 1vw;
+  width: 30vw;
+  height: 30vh;
+  row-gap: 6%;
+  background-color: #ecf0f2e6;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: -7px 5px 8px rgba(0, 0, 0, 0.25);
+  border: solid 0.2vw RGB(248, 153, 28);
+}

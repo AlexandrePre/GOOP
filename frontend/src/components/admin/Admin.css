@@ -1,0 +1,72 @@
+.Allcorp {
+  padding-top: 3vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 30px;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.collectivite {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  box-shadow: -7px 5px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 34px;
+}
+
+.ville {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  box-shadow: -7px 5px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 34px;
+  border: 1px solid black;
+}
+
+.gestion {
+  width: 10%;
+  display: flex;
+  justify-content: space-around;
+  gap: 30%;
+}
+
+.gestion img {
+  width: 45%;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  box-shadow: -7px 5px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 34px;
+  border: 1px solid black;
+}
+
+.info h2 {
+  font-size: small;
+}
+
+.CardCorps {
+  padding-top: 2vh;
+  margin-left: 1vw;
+  width: 30vw;
+  height: 33vh;
+  row-gap: 6%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: -7px 5px 8px rgba(0, 0, 0, 0.25);
+  background-color: #ecf0f2e6;
+  border: solid 0.2vw RGB(248, 153, 28);
+}
+
+.collectivite {
+  border: solid 0.2vw RGB(248, 153, 28);
+}
