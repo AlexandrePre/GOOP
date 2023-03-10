@@ -100,13 +100,13 @@ const userController = {
     }
 
     // eslint-disable-next-line camelcase
-    const { firstName, lastname, email, password } = req.body;
+    const { firstname, lastname, email, password } = req.body;
 
     const hashedPassword = await passwordHash(password);
 
     userModel
       .createOne({
-        firstName,
+        firstname,
         lastname,
         email,
         // eslint-disable-next-line camelcase
@@ -119,7 +119,7 @@ const userController = {
               message: "user created",
               id: result.insertId,
               email,
-              firstName,
+              firstname,
               lastname,
             })
           );
