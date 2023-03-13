@@ -14,12 +14,11 @@ export default function Login() {
   const [passwordVisibility, setPasswordVisibility] = useState(false);
   const [logoValide, setLogoValide] = useState(false);
 
-  const { login, auth } = useContext(authContext);
+  const { login } = useContext(authContext);
   const navigate = useNavigate();
+
   useEffect(() => {
-    if (auth.data) {
-      navigate("/dashboard");
-    }
+    document.body.style.overflow = "hidden";
   }, []);
 
   const handleVisibility = () => {
@@ -40,10 +39,11 @@ export default function Login() {
     e.preventDefault();
     if (email && password) {
       api
-        .post("user/login", { email, password }, { withCredentials: true })
+        .post("user/login", { email, password })
         .then((res) => {
           if (res.status === 200) {
             login(res.data);
+            navigate("/home");
           }
         })
         .catch((err) => err.response);
@@ -100,11 +100,9 @@ export default function Login() {
           Connexion
         </button>
         <button onClick={navigateCreateLogin} type="button" id="btnCreateLogin">
-        Je n'ai pas de compte
-      </button>
+          Je n'ai pas de compte
+        </button>
       </form>
-
-     
     </div>
   );
 }
