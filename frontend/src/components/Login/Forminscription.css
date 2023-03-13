@@ -1,36 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Raleway:wght@500&display=swap");
 
+
+
 .form {
-  grid-area: 2 / 2 / 3 / 3;
+
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   grid-column-gap: 20px;
-  grid-row-gap: 10px;
+  grid-row-gap: 1px;
   height: 40vh;
   width: 40vw;
 }
 
+.titleforminscription{
+  grid-area: 1 / 1 / 2 / 3;
+  display: flex;
+  justify-content: center;
+  font-family: "Raleway", sans-serif;
+
+
+}
+.formInscription {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-image: url(../../assets/img/Background.png);
+  background-size: cover;
+
+}
+
 #logoValidation {
   position: relative;
-  top: -5vh;
-  left: 18.3vw;
+  top: -6vh;
+  left: 18vw;
   width: 2vw;
 }
 
 #btn-visibility-inscription {
   position: relative;
-  top: -5vh;
-  left: 18.3vw;
+  top: -6.4vh;
+  left: 17.8vw;
   width: 2vw;
-}
-
-.form h2 {
-  grid-area: 1 / 1 / 2 / 3;
-  padding-top: 30px;
-  display: flex;
-  justify-content: center;
-  font-family: "Raleway", sans-serif;
 }
 
 #lastname {
@@ -44,13 +56,14 @@
 }
 
 #lastnameConnexion {
-  width: 96%;
+  padding: 10px;
+  width: 90%;
   border-radius: 15px;
   font-family: "Raleway", sans-serif;
 }
 
 #firstname {
-  grid-area: 2 / 2 / 3 / 3;
+  grid-area: 2 / 2 / 3 / 3; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,15 +73,17 @@
 }
 
 #firstnameConnexion {
-  width: 100%;
+  padding: 10px;
+  width: 90%;
   border-radius: 15px;
   font-family: "Raleway", sans-serif;
 }
 
 #mail {
-  grid-area: 3 / 1 / 4 / 3;
+  grid-area: 3 / 1 / 4 / 3; 
   display: flex;
   flex-direction: column;
+  margin-top: 2vh;
   align-items: center;
   justify-content: center;
   font-family: "Raleway", sans-serif;
@@ -124,10 +139,11 @@
 
 #btn-inscription {
   grid-area: 6 / 1 / 7 / 3;
-  border-radius: 10px solid transparent;
-  background-color: #346a82;
-  color: white;
+  border-radius: 15px;
+  background-color: darkorange;
+  padding: 8px;
   font-family: "Raleway", sans-serif;
+  font-weight : bold;
 }
 
 #termes {

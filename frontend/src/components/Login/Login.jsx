@@ -6,6 +6,7 @@ import eyes from "../../assets/img/oeil.png";
 import eyesInvisibles from "../../assets/img/oeilcache.png";
 import api from "../../services/api";
 import { authContext } from "../../hooks/authContext";
+import "./Login.css";
 
 export default function Login() {
   const [email, setEmail] = useState();
@@ -49,63 +50,61 @@ export default function Login() {
     }
   };
 
-  return (
-    <div className=" flex justify-center items-center rounded-2xl">
-      <div className="w-[100%] h-[100%] flex flex-col items-center">
-        <p className="text-2xl mt-6">Connexion</p>
-        <form
-          className="flex flex-col gap-6 justify-center h-full"
-          onSubmit={handleSubmit}
-        >
-          <div className="flex flex-col relative">
-            <label htmlFor="email">Email</label>
-            <input
-              type="text"
-              className=" w-96 h-10 rounded-xl pl-4 focus:border-2 focus:border-orange-500 focus:outline-none"
-              name="mail"
-              placeholder="Email"
-              onKeyUp={emailValidation}
-              value={email}
-              onChange={emailValidation}
-              required="required"
-            />
-            <img
-              id="logoValidationconnexion"
-              src={logoValide ? good : bad}
-              alt="validation"
-            />
-          </div>
+  const navigateCreateLogin = () => {
+    navigate("/inscription");
+  };
 
-          <div className="flex flex-col relative ">
-            <label htmlFor="password">Password</label>
-            <input
-              name="password"
-              type="password"
-              className="w-96 h-10 rounded-xl pl-4 focus:border-2 focus:border-orange-500 focus:outline-none"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required="required"
-            />
-            <img
-              id="btn-visibility"
-              onClick={handleVisibility}
-              src={passwordVisibility ? eyesInvisibles : eyes}
-              role="presentation"
-              alt="oeil"
-            />
-          </div>
-          <div className="flex justify-center">
-            <button
-              type="submit"
-              className="bg-orange-400 py-2 px-3 rounded-xl text-white"
-              value="Login"
-            >
-              Connexion
-            </button>
-          </div>
-        </form>
-      </div>
+  return (
+    <div className="containerFormLogin">
+      <form className="formLogin" onSubmit={handleSubmit}>
+        <h2 className="titleLogin">Connexion</h2>
+
+        <div className="emailLogin">
+          <input
+            type="text"
+            name="mail"
+            placeholder="Email"
+            onKeyUp={emailValidation}
+            value={email}
+            onChange={emailValidation}
+            required="required"
+            id="inputEmailLogin"
+          />
+          <img
+            id="logoValidationLogin"
+            src={logoValide ? good : bad}
+            alt="validation"
+          />
+        </div>
+
+        <div className="passwordLogin">
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required="required"
+            id="inputPasswordlogin"
+          />
+          <img
+            id="btn-visibility-inscription-login"
+            onClick={handleVisibility}
+            src={passwordVisibility ? eyesInvisibles : eyes}
+            role="presentation"
+            alt="oeil"
+          />
+        </div>
+
+        <button type="submit" className="btnlogin" value="Login">
+          Connexion
+        </button>
+        <button onClick={navigateCreateLogin} type="button" id="btnCreateLogin">
+        Je n'ai pas de compte
+      </button>
+      </form>
+
+     
     </div>
   );
 }

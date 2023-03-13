@@ -15,12 +15,12 @@ function Transition() {
   return (
     <div>
       <Routes>
-        <Route path="/connexion" element={<ContainerLogin />} />
+        <Route path="/" element={<ContainerLogin />} />
         <Route path="/home" element={<Home />} />
         <Route path="/technicien" element={<Technicien />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Error />} />
-        <Route path="/" element={<FormInscription />} />
+        <Route path="/inscription" element={<FormInscription />} />
       </Routes>
     </div>
   );

@@ -1,0 +1,75 @@
+.containerFormLogin{
+
+    row-gap: 10vh;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-image: url(../../assets/img/Background.png);
+    background-size: cover;
+}
+
+.titleLogin{
+
+    display: flex;
+    justify-content: center;
+    margin-right: 3vw;
+}
+
+.formLogin{
+
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 20px;
+grid-row-gap: 10px;
+height: 30vh;
+width: 40vw;
+}
+
+#inputEmailLogin{
+width: 90%;
+border-radius: 15px;
+padding: 8px;
+
+}
+#logoValidationLogin {
+    width: 4vh;
+    position: relative;
+    top:1.2vh;
+    left:-3vw;
+}
+
+
+#inputPasswordlogin{
+    width: 90%;
+    border-radius: 15px;
+    padding: 8px;
+    
+    }
+
+#btn-visibility-inscription-login{
+    width: 4vh;
+    position: relative;
+    top:1.2vh;
+    left:-3vw;
+
+
+}
+
+    .btnlogin {
+        width: 95%;
+        border-radius: 15px;
+        padding: 8px;
+        background-color: darkorange;
+        font-weight : bold;
+
+
+    }
+
+#btnCreateLogin{
+    background-color: transparent;
+    border: none;
+    font-size: large;
+    font-weight: bold;
+}

@@ -1,5 +1,4 @@
 /* eslint-disable import/no-unresolved */
-import "./Tailwind.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import Transition from "./Transition";
 import AuthProvider from "./hooks/authContext";

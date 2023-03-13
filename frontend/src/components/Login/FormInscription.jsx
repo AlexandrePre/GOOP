@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import good from "../../assets/img/good.png";
 import bad from "../../assets/img/bad.png";
@@ -10,6 +10,10 @@ import PWDRequisite from "./PWDRequiste";
 // import data from "../../tools/datavalidation";
 
 export default function FormInscription() {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+  }, []);
+
   const [input, setInput] = useState({
     firstname: "",
     lastname: "",
@@ -78,7 +82,7 @@ export default function FormInscription() {
         .post("user/", { ...input, ...email })
         .then((res) => {
           if (res.status === 201) {
-            navigate("/home");
+            navigate("/");
           }
         })
         .catch((err) => err.response);
@@ -86,9 +90,9 @@ export default function FormInscription() {
   };
 
   return (
-    <>
+    <div className="formInscription">
       <form className="form" onSubmit={handleSubmitConnexion}>
-        <h2>Créer un compte gratuit</h2>
+        <h2 className="titleforminscription">Créer un compte gratuit</h2>
 
         <div id="firstname">
           <input
@@ -167,11 +171,12 @@ export default function FormInscription() {
         <button type="submit" id="btn-inscription" value="Creation">
           S'inscrire à GoOp
         </button>
+
+        <div id="termes">
+          <h4>En vous inscrivant, vous accepter les</h4>
+          <h5>Termes et conditions</h5>
+        </div>
       </form>
-      <div id="termes">
-        <h4>En vous inscrivant, vous accepter les</h4>
-        <h5>Termes et conditions</h5>
-      </div>
-    </>
+    </div>
   );
 }
