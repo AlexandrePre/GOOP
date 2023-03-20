@@ -39,7 +39,14 @@ const userController = {
         if (!user) {
           res.status(401).send({ error: "invalid email" });
         } else {
-          const { id, firstName, lastname, role, password: hash } = user;
+          const {
+            id,
+            firstName,
+            lastname,
+            admin,
+            technicien,
+            password: hash,
+          } = user;
           if (await passwordVerify(hash, password)) {
             const token = jwtSign(
               {
@@ -47,7 +54,8 @@ const userController = {
                 firstName,
                 lastname,
                 email,
-                role,
+                admin,
+                technicien,
               },
               { expiresIn: "1h" }
             );
@@ -58,7 +66,7 @@ const userController = {
                 secure: true,
               })
               .status(200)
-              .send({ id, firstName, lastname, email, role });
+              .send({ id, firstName, lastname, email, admin, technicien });
           } else {
             res.status(401).send({ error: "invalid password" });
           }

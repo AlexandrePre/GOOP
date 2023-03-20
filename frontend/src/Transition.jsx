@@ -22,7 +22,7 @@ function Transition() {
           }
         />
         <Route
-          path="/technicien"
+          path="home/technicien"
           element={
             <ProtectedRoute>
               <Technicien />
@@ -30,7 +30,7 @@ function Transition() {
           }
         />
         <Route
-          path="/admin"
+          path="home/admin"
           element={
             <ProtectedRoute>
               <Admin />
