@@ -15,6 +15,7 @@ import trees from "@assets/img/trees.png";
 import roadPage02 from "@assets/img/roadPage02.png";
 import montains from "@assets/img/montains.png";
 import { gsap } from "gsap";
+import "../Tailwind.css";
 import ContainerSearchBar from "./searchBar/ContainerSearchBar";
 import CarContainer from "./Car/CarContainer";
 

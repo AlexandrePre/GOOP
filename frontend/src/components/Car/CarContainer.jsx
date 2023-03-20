@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import dataCar from "../../tools/dataCar";
+import "../../Tailwind.css";
 
 function CarContainer({ isActive }) {
   return (

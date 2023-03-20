@@ -16,7 +16,7 @@ const dataCar = [
     id: 1,
     title: "ImgCars",
     img: img208B,
-    isActive: false,
+    isActive: true,
   },
   {
     id: 2,

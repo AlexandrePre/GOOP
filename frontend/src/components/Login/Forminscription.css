@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Raleway:wght@500&display=swap");
 
-
-
 .form {
-
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(6, 1fr);
@@ -13,13 +10,11 @@
   width: 40vw;
 }
 
-.titleforminscription{
+.titleforminscription {
   grid-area: 1 / 1 / 2 / 3;
   display: flex;
   justify-content: center;
   font-family: "Raleway", sans-serif;
-
-
 }
 .formInscription {
   height: 100vh;
@@ -28,7 +23,6 @@
   justify-content: center;
   background-image: url(../../assets/img/Background.png);
   background-size: cover;
-
 }
 
 #logoValidation {
@@ -63,7 +57,7 @@
 }
 
 #firstname {
-  grid-area: 2 / 2 / 3 / 3; 
+  grid-area: 2 / 2 / 3 / 3;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,7 +74,7 @@
 }
 
 #mail {
-  grid-area: 3 / 1 / 4 / 3; 
+  grid-area: 3 / 1 / 4 / 3;
   display: flex;
   flex-direction: column;
   margin-top: 2vh;
@@ -143,7 +137,7 @@
   background-color: darkorange;
   padding: 8px;
   font-family: "Raleway", sans-serif;
-  font-weight : bold;
+  font-weight: bold;
 }
 
 #termes {

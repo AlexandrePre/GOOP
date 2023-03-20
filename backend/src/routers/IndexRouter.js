@@ -8,7 +8,6 @@ const voyageRouter = require("./voyageRouter");
 
 const router = express.Router();
 
-
 router.use("/corporation", corporationRouter);
 router.use("/car", carRouter);
 router.use("/status", statusRouter);

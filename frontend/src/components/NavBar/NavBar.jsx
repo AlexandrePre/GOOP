@@ -2,6 +2,7 @@
 import React, { useContext } from "react";
 import NavBarItem from "@components/NavBar/NavBarItem";
 import { authContext } from "../../hooks/authContext";
+import "../../Tailwind.css";
 
 function NavBar() {
   const { logout } = useContext(authContext);

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import TravelAvailable from "./TravelAvailable";
 import ReactDatePicker from "../ReactDatePicker/ReactDatePicker";
 import api from "../../services/api";
+import "../../Tailwind.css";
 
 function ContainerSearchBar() {
   const [dataVoyage, setDataVoyage] = React.useState([]);

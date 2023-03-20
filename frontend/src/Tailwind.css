@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @font-face {
   font-family: OfficinaSansStd-Bold;
@@ -88,9 +91,9 @@
   right: 30vw;
 }
 
-.imgcar {
+/* .imgcar {
   opacity: 0;
-}
+} */
 
 #socle {
   position: absolute;
@@ -164,7 +167,7 @@
   border: solid 0.2vw RGB(248, 153, 28);
 }
 
-/* .login {
+.login {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -172,7 +175,7 @@
   background-image: url(./assets/img/Background.png);
   background-size: cover;
   padding-top: 2%;
-} */
+}
 
 .searchBar {
   position: absolute;
