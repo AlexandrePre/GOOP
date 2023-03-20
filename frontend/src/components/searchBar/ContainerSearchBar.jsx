@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { authContext } from "../../hooks/authContext";
 import TravelAvailable from "./TravelAvailable";
 import ReactDatePicker from "../ReactDatePicker/ReactDatePicker";
 import api from "../../services/api";
 import "../../Tailwind.css";
 
 function ContainerSearchBar() {
-  const [dataVoyage, setDataVoyage] = React.useState([]);
-  const [show, setShow] = React.useState(false);
+  const { auth } = useContext(authContext);
+  const [dataVoyage, setDataVoyage] = useState([]);
+  const [show, setShow] = useState(false);
   const [input, setInput] = useState({
-    DateStart: "",
+    dateStart: "",
     dateEnd: "",
     cityStart: "",
     cityDestination: "",
+    id_user: auth.data.id,
   });
+
   const handleClick = (e) => {
     e.preventDefault();
     setShow(!show);
@@ -46,7 +50,7 @@ function ContainerSearchBar() {
               Filter by{" "}
               <select id="" onClick={onChangestart}>
                 <option name="cityStart" value={input.cityStart}>
-                  ---
+                  no-city
                 </option>
                 {dataVoyage.map((el) => (
                   <option key={el.id} value={el.cityStart}>
@@ -64,7 +68,7 @@ function ContainerSearchBar() {
               Filter by{" "}
               <select id="" onClick={onChangeEnd}>
                 <option name="cityDestination" value={input.cityDestination}>
-                  ---
+                  no-city
                 </option>
                 {dataVoyage.map((el) => (
                   <option key={el.id} value={el.cityDestination}>
@@ -75,7 +79,7 @@ function ContainerSearchBar() {
             </label>
           </div>
         </div>
-        <ReactDatePicker />
+        <ReactDatePicker input={input} setInput={setInput} />
         <button
           type="submit"
           className="bg-orange-400 px-3 py-1 rounded-xl  mt-5"

@@ -2,27 +2,20 @@
 const voyageModel = require("../models/voyageModel");
 
 const voyageController = {
-  getAllVoyages: async (req, res) => {
-    try {
-      const result = await voyageModel.findAllVoyages();
-      res.status(200).json(result);
-    } catch (err) {
-      res.status(500).json(err);
-    }
+  getAllVoyages: (_req, res, next) => {
+    voyageModel
+      .findAllVoyages()
+      .then((input) => res.send(input))
+
+      .catch((err) => next(err));
   },
-  getAllVoyageByDate: async (req, res) => {
-    const { cityStart, cityDestination, DateStart, dateEnd } = req.body;
-    try {
-      const result = await voyageModel.findAllVoyageByDate(
-        cityStart,
-        cityDestination,
-        DateStart,
-        dateEnd
-      );
-      res.status(200)(result);
-    } catch (err) {
-      res.status(500)(err);
-    }
+
+  getAllVoyageByDate: (req, res) => {
+    const { cityStart, cityDestination, dateStart, dateEnd } = req.body;
+    voyageModel
+      .findAllVoyageByDate(cityStart, cityDestination, dateStart, dateEnd)
+      .then((voyage) => res.send(voyage))
+      .catch((err) => res.send(err));
   },
 
   createOneVoyage: async (req, res) => {
@@ -31,17 +24,17 @@ const voyageController = {
       id_user,
       cityStart,
       cityDestination,
-      DateStart,
+      dateStart,
       dateEnd,
       seatLeft,
     } = req.body;
     try {
-      const result = await voyageModel.createVoyage(
+      const result = voyageModel.createVoyage(
         id_car,
         id_user,
         cityStart,
         cityDestination,
-        DateStart,
+        dateStart,
         dateEnd,
         seatLeft
       );

@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import React, { useRef } from "react";
+import { useRef, useState } from "react";
 import NavBar from "@components/NavBar/NavBar";
 import arrow from "@assets/img/arrow.png";
 import buildings from "@assets/img/buildings.png";
@@ -21,7 +21,7 @@ import CarContainer from "./Car/CarContainer";
 
 function Home() {
   const ref = useRef(null);
-  const [isActive, setIsActive] = React.useState(1);
+  const [isActive, setIsActive] = useState(1);
 
   function next() {
     gsap.to("#car", { opacity: 1, duration: 0.8, delay: 0, x: "80vw" });
