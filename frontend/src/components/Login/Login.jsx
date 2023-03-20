@@ -80,7 +80,7 @@ export default function Login() {
         <div className="passwordLogin">
           <input
             name="password"
-            type="password"
+            type={passwordVisibility ? "text" : "password"}
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}

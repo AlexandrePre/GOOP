@@ -11,7 +11,9 @@
 .titleLogin {
   display: flex;
   justify-content: center;
+  margin-top: 2vh;
   margin-right: 3vw;
+  font-size: larger;
 }
 
 .formLogin {
@@ -25,19 +27,19 @@
 }
 
 #inputEmailLogin {
-  width: 90%;
+  width: 95%;
   border-radius: 15px;
   padding: 8px;
 }
 #logoValidationLogin {
   width: 4vh;
   position: relative;
-  top: 1.2vh;
-  left: -3vw;
+  top: -5.8vh;
+  left: 35vw;
 }
 
 #inputPasswordlogin {
-  width: 90%;
+  width: 95%;
   border-radius: 15px;
   padding: 8px;
 }
@@ -45,8 +47,8 @@
 #btn-visibility-inscription-login {
   width: 4vh;
   position: relative;
-  top: 1.2vh;
-  left: -3vw;
+  top: -5.8vh;
+  left: 35vw;
 }
 
 .btnlogin {
