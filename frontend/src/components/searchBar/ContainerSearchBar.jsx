@@ -38,6 +38,7 @@ function ContainerSearchBar() {
   useEffect(() => {
     fetchDataVille();
   }, [onChangeEnd]);
+
   return (
     <div className="searchBar">
       <form className="w-[100%] h-full flex flex-col justify-center items-center text-gray-800 text-lg">

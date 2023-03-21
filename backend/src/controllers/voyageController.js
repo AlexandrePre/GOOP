@@ -14,8 +14,8 @@ const voyageController = {
     const { cityStart, cityDestination, dateStart, dateEnd } = req.body;
     voyageModel
       .findAllVoyageByDate(cityStart, cityDestination, dateStart, dateEnd)
-      .then((voyage) => res.send(voyage))
-      .catch((err) => res.send(err));
+      .then((voyage) => res.json(voyage))
+      .catch((err) => res.json(err));
   },
 
   createOneVoyage: async (req, res) => {

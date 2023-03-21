@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { gsap } from "gsap";
 import dataVoyage from "../../tools/dataVoyage";
@@ -5,6 +6,19 @@ import VoyageList from "./VoyageList";
 import api from "../../services/api";
 
 function TravelAvailable({ input }) {
+  const [existVoyage, setExistVoyage] = useState([]);
+
+  const fetchVoyage = () => {
+    api
+      .post("voyage/getAllVoyageByDate", { ...input })
+      .then((response) => setExistVoyage(response.data))
+      .catch((err) => err(err.response));
+  };
+
+  useEffect(() => {
+    fetchVoyage();
+  }, [input]);
+
   const handleClick = (e) => {
     gsap.to(".findTravel", { opacity: 0, duration: 0.5, delay: 0 });
     gsap.to(".searchBar", { opacity: 0, duration: 0.5, delay: 0, scale: 0 });
@@ -29,7 +43,7 @@ function TravelAvailable({ input }) {
       }
     >
       <div className="w-[100%] h-full flex flex-col justify-center items-center text-gray-800 text-lg mt-6">
-        {input.cityDestination === "paris" || input.cityStart === "" ? (
+        {existVoyage.length === 0 ? (
           <div className="flex flex-col items-center gap-2 ">
             <div className="">
               <p>No trip, please create one.</p>

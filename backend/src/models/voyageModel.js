@@ -8,7 +8,7 @@ async function findAllVoyages() {
 }
 
 function findAllVoyageByDate(cityStart, cityDestination, dateStart, dateEnd) {
-  database
+  return database
     .promise()
     .query(
       "SELECT * FROM voyage WHERE cityStart = ? AND cityDestination = ? AND dateStart = ? AND dateEnd = ? ",

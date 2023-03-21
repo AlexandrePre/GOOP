@@ -1,20 +1,16 @@
 /* eslint-disable import/no-unresolved */
 import React, { useContext, useState, useEffect } from "react";
 import NavBarItem from "@components/NavBar/NavBarItem";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { authContext } from "../../hooks/authContext";
 import "../../Tailwind.css";
 
 function NavBar() {
   const { logout, auth } = useContext(authContext);
   const [admin, setAdmin] = useState(false);
-  const navigate = useNavigate();
+
   const displayAdmin = () => {
     if (auth.data.admin === 1) setAdmin(true);
-  };
-
-  const goAdmin = () => {
-    navigate("home/admin");
   };
 
   useEffect(() => {
@@ -33,33 +29,24 @@ function NavBar() {
           Logout
         </button>
       </div>
-
-      <div
-        className="flex justify-between w-full"
-        style={{ display: auth.data.admin ? "block" : "none" }}
-      >
-        <button
-          className="text-lg"
-          id="btn-logout"
-          type="button"
-          onClick={() => goAdmin()}
+      <Link to="/admin">
+        <div
+          className="flex justify-between w-full"
+          style={{ display: auth.data.admin ? "block" : "none" }}
         >
-          admin
-        </button>
-      </div>
+          <p className="text-lg" id="btn-logout">
+            admin
+          </p>
+        </div>
+      </Link>
 
       <div
         className="flex justify-between w-full"
         style={{ display: auth.data.technicien ? "block" : "none" }}
       >
-        <button
-          className="text-lg"
-          id="btn-logout"
-          type="button"
-          onClick={() => goAdmin()}
-        >
+        <p className="text-lg" id="btn-logout">
           technicien
-        </button>
+        </p>
       </div>
 
       <div>
